@@ -50,8 +50,8 @@ void airPlane() { //Set the shape of the airplane.
   triangle(x-60, y-40, x-60, y+40, x-40, y);
   x += speed; //Make the object move 
  
-   if (x > 940 || x < -140) { //Moving range
-   speed *= -1;
+  if (x > 940) { //When the airplane exceeds the range, it will return to the origin. 
+   x = 0;
   } 
 }
 
