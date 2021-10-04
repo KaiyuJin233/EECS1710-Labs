@@ -3,17 +3,20 @@ float x = 120; //The position of the object on the x axis
 float x1, x2, x3, x4, x5 = 150; //The position of the object on the x axis 
 float y1 = 160; //The position of the object on the y axis 
 float y =640/2; //The position of the object on the y axis 
-float speed = 2; //Speed setting 
+float speed = 2;//Speed setting 
+float speedx1 = 2;//Speed setting 
 float speed1 = 1; //Speed setting 
 float speed2 = 0.5; //Speed setting 
 float speed3 = 2.2; //Speed setting 
 float speed4 = 0.7; //Speed setting 
 float speed5 = 1.3; //Speed setting 
+float x6 = width/2;
+float y2= height/2;
 
 void setup() {
   size(800, 640, P2D); //set size
   light = loadImage("background.jpg"); //Load the image into the program 
-  light.resize(width, height); //Reset the length and width 
+  light.resize(light.width*4, height); //Reset the length and width 
   imageMode(CENTER); //Set image location 
 }
 
@@ -22,15 +25,33 @@ void draw() {
   noStroke();
   background(0, 0, 0); //background color
   
+  
+  
   if(mousePressed == true) { // When the mouse is clicked, the background turns to dark and the mouse changes from the sun to the moon, and the clouds disappeared. 
-  tint(147, 147, 142, 150);
-  image(light, 400, 320);
-  moon();
+   tint(147, 147, 142, 150);
+   image(light, x6, 320);
+  
+    x6 += speedx1; // move background
+  
+    if (x6 > width || x6 <0) { //When the background exceeds the range, it will return back.
+    speedx1 *= -1;
+   
   }
+   moon();  
+}
   
   if(mousePressed == false) { //When the mouse is not clicked, the background turns to dawn and the mouse changes from the moon to the sun, and clouds appear. 
+  //noTint();
+  //image(light, 400, 320);
+  
   noTint();
-  image(light, 400, 320);
+  image(light, x6, 320);
+  
+  x6 += speedx1;
+  
+  if (x6 > width || x6 <0) {
+    speedx1 *= -1;
+  }
   sun();
   cloud(); 
   cloud2();
@@ -50,7 +71,7 @@ void airPlane() { //Set the shape of the airplane.
   triangle(x-60, y-40, x-60, y+40, x-40, y);
   x += speed; //Make the object move 
  
-  if (x > 940) { //When the airplane exceeds the range, it will return to the origin. 
+   if (x > 940) { //When the airplane exceeds the range, it will return to the origin. 
    x = 0;
   } 
 }
