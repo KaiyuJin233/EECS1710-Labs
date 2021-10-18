@@ -97,5 +97,5 @@ void numbers() {
   text("12", -18, -size/2+30);
   text("6", -8, size/2-10);
   text("3", size/2-30, 12);
-  text("9", -size/2+15, 12);
+  text("9", -size/2+10, 12);
 }
