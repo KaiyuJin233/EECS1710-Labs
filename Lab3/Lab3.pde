@@ -42,14 +42,15 @@ void draw() {
   fill(#8EF20C);
   stroke(#B4F560);
   ellipse(width/2, height/2, size, size);
-  
+ 
   stroke(#FEFF08);
-  for(int i=0; i<12; i++) {
-    float tran = ((float) i/12) * TWO_PI;
+  strokeWeight(3);
+  for(int i=0; i<60; i++) {
+    float tran = ((float) i/60) * TWO_PI;
     pushMatrix();
     translate(width/2, height/2);
     rotate(tran);
-    line(0, 100, 0, size/3);
+    line(0, 165, 0, 170);
     popMatrix();
   }
   
@@ -94,7 +95,7 @@ void numbers() {
   textSize(30);
   translate(width/2, height/2);
   text("12", -18, -size/2+30);
-  text("6", -8, size/2-15);
+  text("6", -8, size/2-10);
   text("3", size/2-30, 12);
   text("9", -size/2+15, 12);
 }
