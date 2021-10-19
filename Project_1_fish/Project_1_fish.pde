@@ -1,4 +1,4 @@
-int num = 3;
+int num = 8;
 
 float x, y;
 PVector position;
