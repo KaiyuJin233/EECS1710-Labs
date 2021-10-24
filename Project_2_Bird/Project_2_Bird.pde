@@ -16,7 +16,7 @@ void setup() {
   background = loadImage("data/forest.jpg");
   background.resize(width*2, height);
   over = loadImage("data/over.jpg");
-  over.resize(width, height);
+  over.resize(width, height/3);
   bird = new PImage[3];
   for(int i = 0; i < bird.length; i++) {
   bird[i] = loadImage("data/birds_" + i + ".png");  } 
@@ -33,11 +33,16 @@ void draw() {
       pipe.run();
       update();
       bird_speedcontrol();
-        if (mousePressed) {
-         bird_speed -= 15;
-          }
-         } else if (!check) {
-         background(over); 
+      if(mousePressed) {
+        bird_speed -= 15;
+        }
+      } else if (!check) {
+      background(255);
+      image(over, 0, height/4);
+      fill(0);
+      textSize(20);
+      text("Press Space to Restart", width/6, height-height/4);
+      
     } 
    }
   }
@@ -51,9 +56,19 @@ void update() {
   birdframe %= bird.length;
 }
 
+
+
+void keyPressed() {
+  if(!check) {
+    pipe.reset();
+  }
+}
+
 void bird_speedcontrol() {
   bird_speed += 5;
 }
+
+
 
 //image link: https://pan.baidu.com/s/1c130V7M#list/path=%2FFlappy%20Bird
  
