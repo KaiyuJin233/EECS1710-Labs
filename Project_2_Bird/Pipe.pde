@@ -61,6 +61,18 @@ void checking() {
     checking();
   }
   
+ void reset() {
+  position.x=0;
+  position.y=0;
+  position1down.x=0;
+  position1down.y=0;
+  position2up.x=0;
+  position2up.y=0;
+  check = true;
+  background_position = 0;
+  pipe_random = 0;
+}
+
   void run() {
   draw();
   }
