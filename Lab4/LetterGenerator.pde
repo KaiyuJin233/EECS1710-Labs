@@ -3,7 +3,7 @@ class LetterGenerator {
   PShape j, i, n;
   ArrayList<Letter> letters;
   PVector position;
-  float offset = 140;
+  float distance = 140;
   
   LetterGenerator(String input, float x, float y) {
     initShapes();
@@ -12,7 +12,7 @@ class LetterGenerator {
     
     for (int a=0; a<input.length(); a++) {     
       char c = input.charAt(a);
-      float px = position.x + ((a+1) * offset);
+      float px = position.x + ((a+1) * distance);
       float py = position.y;
       
       switch(c) {
