@@ -2,6 +2,8 @@ class Letter {
   PShape shape;
   PVector position;
   PVector[] vertices;
+  float range = 0.5;
+
   
   Letter(PShape _s, float _x, float _y) {
     shape = _s;
@@ -12,7 +14,13 @@ class Letter {
   void update() {
     for (int i=0; i<vertices.length; i++) {
       vertices[i] = shape.getVertex(i);
-      vertices[i].add(new PVector(random(-0.3, 0.3), random(-0.3, 0.3)));
+      position.add(new PVector (random(-range, range), random(-range, range)));
+      if (position.x > 0 || position.y > 0) {
+      range++;
+      }
+      if (position.x < width/1.1 || position.y < height/1.1) {
+      range--;
+      }
       shape.setVertex(i, vertices[i]);
     }
   }
