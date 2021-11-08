@@ -1,5 +1,5 @@
-float scaleAmp = 1000;
-float scaleFreq = 1000;
+float scaleAmp = 1200;
+float scaleFreq = 1200;
 
 
 void setup() {
