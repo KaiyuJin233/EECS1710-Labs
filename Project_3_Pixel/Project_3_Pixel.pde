@@ -49,7 +49,7 @@ void imgC() {
       int loc = x + y * (img.width);
       dots.add(new Dot(x, y-12, img.pixels[loc]));
       if (keyPressed == true) {
-      img.pixels[loc] = color(random(127, 255), random(0, 255), random(127, 255));
+      img.pixels[loc] = color(random(0, 255), random(0, 255));
       }    
     }
   }
