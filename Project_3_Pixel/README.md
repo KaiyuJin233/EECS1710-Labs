@@ -1,0 +1,1 @@
+The color of the original picture will change when the mouse is pressed, and the picture will become a black and white garbled picture when the keyboard is pressed, and when the mouse is pressed again, the pixels will change different colors over time. 
